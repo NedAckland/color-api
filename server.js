@@ -10,6 +10,10 @@ const port = process.env.PORT || 8080;
 const { Pool } = require('pg')
 const pool = new Pool({ database: 'colors_api', password: 'password' })
 
+app.set('views', './')
+app.set('view engine', 'ejs')
+
+
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -25,9 +29,25 @@ app.set('views', './views')
 app.set('view engine', 'ejs')
 // app.set('layout','layout')
 
+
 /*********** Home page *********/ 
 app.get('/', (req, res) => {
     res.render('home', {layout: 'layout'}) 
+})
+
+app.get('/palettes', (req, res) => {
+    res.render('palettes')
+});
+
+// get all colors --- FOR TESTING ONLY ---
+
+// before using please set up your db and then run seed-colors-and-paletts.js 
+
+app.get('/api/colors', (req, res) => {
+    pool.query('select * from colors;', [], (err, db) => {
+        res.json({message: "ok", data: db.rows})
+
+    })
 })
 
 /*********** Login page *********/ 
