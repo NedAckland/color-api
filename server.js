@@ -30,11 +30,14 @@ app.set('view engine', 'ejs')
 // app.set('layout','layout')
 
 
+<<<<<<< HEAD
 /*********** Home page *********/ 
 app.get('/', (req, res) => {
     res.render('home', {layout: 'layout'}) 
 })
 
+=======
+>>>>>>> a
 app.get('/palettes', (req, res) => {
     res.render('palettes')
 });
