@@ -14,14 +14,16 @@ const secondaryHexCssVariables = document.querySelector('.secondary-hex-codes')
 const tertiaryHexCssVariables = document.querySelector('.tertiary-hex-codes')
 const quaternaryHexCssVariables = document.querySelector('.quaternary-hex-codes')
 const quinaryHexCssVariables = document.querySelector('.quinary-hex-codes')
+const apiTextArea = document.querySelector('.api-textarea')
 
-
-function setCssExportVariables(primaryColor, secondaryColor, tertiaryColor, quaternaryColor, quinaryColor) {
+function setExportVariables(primaryColor, secondaryColor, tertiaryColor, quaternaryColor, quinaryColor) {
     primaryHexCssVariables.textContent = `--primary-color: ${primaryColor} `
     secondaryHexCssVariables.textContent = `--secondary-color: ${secondaryColor}`
     tertiaryHexCssVariables.textContent = `--tertiary-color: ${tertiaryColor}` 
     quaternaryHexCssVariables.textContent = `--quaternary-color: ${quaternaryColor}`
     quinaryHexCssVariables.textContent = `--quinary-color: ${quinaryColor}`
+    var palletId = 'PalletID'
+    apiTextArea.textContent = `http://www.ourServerDomainHere/api/palettes/${palletId}`
 }
 
 
@@ -47,7 +49,7 @@ const randomColorGenerator = () => {
     tertiaryHex.innerText = tertiaryColor;
     quaternaryHex.innerText = quaternaryColor;
     quinaryHex.innerText = quinaryColor;
-    setCssExportVariables(primaryColor, secondaryColor, tertiaryColor, quaternaryColor, quinaryColor)
+    setExportVariables(primaryColor, secondaryColor, tertiaryColor, quaternaryColor, quinaryColor)
 }
 
 const primaryColPickr = Pickr.create({
