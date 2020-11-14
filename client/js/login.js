@@ -10,6 +10,22 @@ const quaternaryHex = document.querySelector('.quaternary-hex')
 const quinaryHex = document.querySelector('.quinary-hex')
 const generateBtn = document.querySelector('.generate-btn')
 
+const primaryHexCssVariables = document.querySelector('.primary-hex-codes')
+const secondaryHexCssVariables = document.querySelector('.secondary-hex-codes')
+const tertiaryHexCssVariables = document.querySelector('.tertiary-hex-codes')
+const quaternaryHexCssVariables = document.querySelector('.quaternary-hex-codes')
+const quinaryHexCssVariables = document.querySelector('.quinary-hex-codes')
+
+
+function setCssExportVariables(primaryColor, secondaryColor, tertiaryColor, quaternaryColor, quinaryColor) {
+    primaryHexCssVariables.textContent = `--primary-color: ${primaryColor} `
+    secondaryHexCssVariables.textContent = `--secondary-color: ${secondaryColor}`
+    tertiaryHexCssVariables.textContent = `--tertiary: ${tertiaryColor}` 
+    quaternaryHexCssVariables.textContent = `--quaternary: ${quaternaryColor}`
+    quinaryHexCssVariables.textContent = `--quinary: ${quinaryColor}`
+}
+
+
 const randomColorGenerator = () => {
     
     var pad = '#000000';
@@ -32,6 +48,7 @@ const randomColorGenerator = () => {
     tertiaryHex.innerText = tertiaryColor;
     quaternaryHex.innerText = quaternaryColor;
     quinaryHex.innerText = quinaryColor;
+    setCssExportVariables(primaryColor, secondaryColor, tertiaryColor, quaternaryColor, quinaryColor)
 }
 
 const primaryColPickr = Pickr.create({
@@ -194,3 +211,4 @@ colorPickerInitialise(tertiaryColPickr)
 colorPickerInitialise(quaternaryColPickr)
 colorPickerInitialise(quinaryColPickr)
 generateBtn.addEventListener('click', randomColorGenerator)
+

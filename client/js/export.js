@@ -1,6 +1,7 @@
 const exportModal = document.getElementById("exportModal");
 const exportBtn = document.querySelector(".export-btn");
 const exportClose = document.getElementsByClassName("close")[0];
+
 exportBtn.onclick = function () {
   exportModal.style.display = "block";
 };
@@ -38,3 +39,4 @@ apiBtn.onclick = function () {
 apiClose.onclick = function () {
   apiModal.style.display = "none";
 };
+

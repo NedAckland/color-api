@@ -270,6 +270,7 @@ div {
     width: 90%;
     height: 50%;
     border: 1px solid lightgray;
+    text-align: left;
 }
 
 .copy-btn p {
@@ -283,4 +284,8 @@ div {
     width: 90%;
     height: 50%;
     border: 1px solid lightgray;
+}
+
+.css-export-item{
+    padding-left: 30px;
 }
