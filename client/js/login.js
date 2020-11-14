@@ -9,7 +9,6 @@ const tertiaryHex = document.querySelector('.tertiary-hex')
 const quaternaryHex = document.querySelector('.quaternary-hex')
 const quinaryHex = document.querySelector('.quinary-hex')
 const generateBtn = document.querySelector('.generate-btn')
-
 const primaryHexCssVariables = document.querySelector('.primary-hex-codes')
 const secondaryHexCssVariables = document.querySelector('.secondary-hex-codes')
 const tertiaryHexCssVariables = document.querySelector('.tertiary-hex-codes')
@@ -20,9 +19,9 @@ const quinaryHexCssVariables = document.querySelector('.quinary-hex-codes')
 function setCssExportVariables(primaryColor, secondaryColor, tertiaryColor, quaternaryColor, quinaryColor) {
     primaryHexCssVariables.textContent = `--primary-color: ${primaryColor} `
     secondaryHexCssVariables.textContent = `--secondary-color: ${secondaryColor}`
-    tertiaryHexCssVariables.textContent = `--tertiary: ${tertiaryColor}` 
-    quaternaryHexCssVariables.textContent = `--quaternary: ${quaternaryColor}`
-    quinaryHexCssVariables.textContent = `--quinary: ${quinaryColor}`
+    tertiaryHexCssVariables.textContent = `--tertiary-color: ${tertiaryColor}` 
+    quaternaryHexCssVariables.textContent = `--quaternary-color: ${quaternaryColor}`
+    quinaryHexCssVariables.textContent = `--quinary-color: ${quinaryColor}`
 }
 
 
